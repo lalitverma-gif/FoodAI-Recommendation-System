@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/restaurant.css') }}">
+</head>
+
+<body class="restaurant-body">
+
+    <nav class="navbar">
+        <h2>FoodAI</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/businesses">Restaurants</a></li>
+            <li><a href="/recommend">Recommendations</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="restaurant-section">
+        <h1>Explore Restaurants 🍴</h1>
+        <p>Find the best places to eat near you</p>
+
+        <div class="restaurant-container">
+            {% for r in restaurants %}
+            <div class="restaurant-card">
+                <h3>{{ r.name }}</h3>
+                <p>⭐ Rating: {{ r.rating }} / 5.0</p>
+                <p>
+                    {% for _ in range(r.rating | int) %}⭐{% endfor %}
+                </p>
+                <p>Cuisine: {{ r.category }}</p>
+
+                <br>
+                <p>Rate this restaurant</p>
+                <!-- Passes the actual session user_id to JavaScript -->
+                <button onclick="rateRestaurant({{ r.business_id }}, 1, {{ user_id }})">⭐</button>
+                <button onclick="rateRestaurant({{ r.business_id }}, 2, {{ user_id }})">⭐⭐</button>
+                <button onclick="rateRestaurant({{ r.business_id }}, 3, {{ user_id }})">⭐⭐⭐</button>
+                <button onclick="rateRestaurant({{ r.business_id }}, 4, {{ user_id }})">⭐⭐⭐⭐</button>
+                <button onclick="rateRestaurant({{ r.business_id }}, 5, {{ user_id }})">⭐⭐⭐⭐⭐</button>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+/* Background */
+.login-body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ff6a00,#ffb347);
+    font-family:Arial, sans-serif;
+    }
+    
+    /* Login Card */
+    .login-container{
+    background:white;
+    padding:40px;
+    width:320px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    text-align:center;
+    }
+    
+    /* Heading */
+    .login-container h2{
+    margin-bottom:5px;
+    color:#333;
+    }
+    
+    .login-container p{
+    margin-bottom:25px;
+    color:#777;
+    font-size:14px;
+    }
+    
+    /* Inputs */
+    .login-container input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    transition:0.3s;
+    }
+    
+    /* Input Focus Effect */
+    .login-container input:focus{
+    border-color:#ff6a00;
+    box-shadow:0 0 5px rgba(255,106,0,0.5);
+    }
+    
+    /* Button */
+    .login-container button{
+    width:100%;
+    padding:12px;
+    background:#ff6a00;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+    }
+    
+    /* Button Hover */
+    .login-container button:hover{
+    background:#e55d00;
+    }
+    
+    /* Signup text */
+    .signup-text{
+    margin-top:15px;
+    font-size:14px;
+    }
+    
+    .signup-text a{
+    color:#ff6a00;
+    text-decoration:none;
+    font-weight:bold;
+    }

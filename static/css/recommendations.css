@@ -1,0 +1,84 @@
+/* Recommendation Page Background */
+.rec-body{
+    font-family:Arial, sans-serif;
+    margin:0;
+    background:#f4f6f9;
+    }
+    
+    /* Navbar */
+    .navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:#ff6a00;
+    color:white;
+    }
+    
+    .navbar ul{
+    display:flex;
+    list-style:none;
+    }
+    
+    .navbar ul li{
+    margin-left:20px;
+    }
+    
+    .navbar ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    }
+    
+    /* Section */
+    .recommendation-section{
+    text-align:center;
+    padding:40px;
+    }
+    
+    .recommendation-section h1{
+    color:#333;
+    margin-bottom:10px;
+    }
+    
+    /* Card Container */
+    .recommendation-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+    margin-top:30px;
+    }
+    
+    /* Restaurant Card */
+    .restaurant-card{
+    background:white;
+    padding:25px;
+    width:220px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+    text-align:center;
+    }
+    
+    /* Hover Effect */
+    .restaurant-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.2);
+    }
+    
+    /* Button */
+    .restaurant-card button{
+    margin-top:10px;
+    padding:10px 15px;
+    border:none;
+    background:#ff6a00;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+    }
+    
+    .restaurant-card button:hover{
+    background:#e55d00;
+    }

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FoodAI - Restaurant Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>FoodAI</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            <!-- Dynamic Navbar: If logged in, show protected links -->
+            {% if user_name %}
+            <li><a href="/businesses">Restaurants</a></li>
+            <li><a href="/recommend">Recommendations</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <!-- If NOT logged in, show Login link -->
+            {% else %}
+            <li><a href="/login_page">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <!-- Welcome Message ONLY shows if user logged in -->
+        {% if user_name %}
+        <h1 style="color: #4CAF50;">Welcome Back, {{ user_name }}! 👋</h1>
+        {% endif %}
+
+        <h1>Find the Best Restaurants Near You 🍽</h1>
+        <p>Discover amazing food with AI-powered recommendations</p>
+
+        <input type="text" id="searchInput" placeholder="Search food or restaurant">
+        <button onclick="searchRestaurant()">Search</button>
+    </section>
+
+    <section class="categories">
+        <h2>Food Categories</h2>
+        <div class="category-container">
+            <div class="category">🍕 Pizza</div>
+            <div class="category">🍔 Burger</div>
+            <div class="category">🍜 Chinese</div>
+            <div class="category">☕ Cafe</div>
+            <div class="category">🍰 Desserts</div>
+        </div>
+    </section>
+
+    <section class="restaurant-section">
+        <h2>Top 5 Rated Restaurants 🏆</h2>
+        <div class="restaurant-container">
+
+            {% for r in top_restaurants %}
+            <div class="restaurant-card">
+                <h3>{{ r.name }}</h3>
+
+                <p>⭐ Rating: {{ r.rating }} / 5.0</p>
+                <p>
+                    {% for _ in range(r.rating | int) %}⭐{% endfor %}
+                </p>
+
+                <p>{{ r.category }}</p>
+                <button onclick="viewRestaurant('{{ r.name }}')">View</button>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 FoodAI | Restaurant Recommendation System</p>
+    </footer>
+
+    <!-- AI Chatbot Bubble -->
+    <div id="chat-bubble" onclick="toggleChat()">
+        🤖
+    </div>
+
+    <!-- AI Chatbot Window -->
+    <div id="chat-window">
+        <div class="chat-header">
+            <span>FoodAI Assistant</span>
+            <span class="close-btn" onclick="toggleChat()">✖</span>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <!-- Messages go here -->
+            <div class="message bot-message">
+                Hello! I am your FoodAI Assistant. How can I help you find the best food today? 🍕
+            </div>
+        </div>
+        <!-- Quick Action Chips -->
+        <div class="quick-replies">
+            <button class="quick-chip" onclick="sendQuickReply('Suggest me a good pizza')">Suggest Pizza</button>
+            <button class="quick-chip" onclick="sendQuickReply('Top Rated Restaurants')">Top Rated</button>
+            <button class="quick-chip" onclick="sendQuickReply('How does this app work?')">How it works</button>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Type a message..." onkeypress="handleChatEnter(event)">
+            <button onclick="sendMessage()">➤</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

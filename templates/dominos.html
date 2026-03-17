@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dominos - Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/restaurant.css') }}">
+    <style>
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background: white;
+            width: 250px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .price {
+            color: #4CAF50;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            background: #ff6a00;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .rating-box {
+            margin-top: 40px;
+            padding: 20px;
+            background: #ffe6d5;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="restaurant-body">
+    <nav class="navbar">
+        <h2>FoodAI</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/businesses">Restaurants</a></li>
+            <li><a href="/recommend">Recommendations</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div style="text-align: center; padding: 40px;">
+        <h1>Dominos 🍕</h1>
+        <p>Hot and fresh pizzas delivered straight to you</p>
+        <h2>Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+                <h3>ExtravaganZZa</h3>
+                <p class="price">Average Price: ₹549</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1541745537411-b8046f4d4362?w=500" alt="Veggie">
+                <h3>Farmhouse Veggie</h3>
+                <p class="price">Average Price: ₹399</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1624353365286-cb18d5b40449?w=500" alt="Lava Cake">
+                <h3>Choco Lava Cake</h3>
+                <p class="price">Average Price: ₹110</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="rating-box">
+            Overall Restaurant Rating: 4.1 ⭐⭐⭐⭐
+        </div>
+    </div>
+</body>
+
+</html>

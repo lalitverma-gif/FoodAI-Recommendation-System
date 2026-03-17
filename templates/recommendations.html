@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Recommendations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recommendations.css') }}">
+</head>
+
+<body class="rec-body">
+
+    <nav class="navbar">
+        <h2>FoodAI</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/businesses">Restaurants</a></li>
+            <li><a href="/recommend">Recommendations</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="recommendation-section">
+        <h1>Recommended For You 🍽</h1>
+        <p>AI suggests these restaurants based on your taste!</p>
+
+        <div class="recommendation-container">
+            {% for r in businesses %}
+            <div class="restaurant-card">
+                <h3>{{ r.name }}</h3>
+                <p>⭐ Rating: {{ r.rating }} / 5.0</p>
+                <p>
+                    {% for _ in range(r.rating | int) %}⭐{% endfor %}
+                </p>
+                <p>{{ r.category }}</p>
+                <button onclick="viewRestaurant('{{ r.name }}')">View</button>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

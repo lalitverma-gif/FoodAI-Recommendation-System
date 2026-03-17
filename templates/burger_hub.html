@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Burger Hub - Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/restaurant.css') }}">
+    <style>
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background: white;
+            width: 250px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .price {
+            color: #4CAF50;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .order-btn {
+            background: #ff6a00;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .rating-box {
+            margin-top: 40px;
+            padding: 20px;
+            background: #ffe6d5;
+            font-size: 22px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="restaurant-body">
+    <nav class="navbar">
+        <h2>FoodAI</h2>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/businesses">Restaurants</a></li>
+            <li><a href="/recommend">Recommendations</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div style="text-align: center; padding: 40px;">
+        <h1>Burger Hub 🍔</h1>
+        <p>The best juicy burgers in town</p>
+        <h2>Menu</h2>
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Cheeseburger">
+                <h3>Classic Cheeseburger</h3>
+                <p class="price">Average Price: ₹199</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1594212202875-520e5de95fef?w=500" alt="Bacon Burger">
+                <h3>Double Decker Burger</h3>
+                <p class="price">Average Price: ₹299</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+            <div class="menu-item">
+                <img src="https://images.unsplash.com/photo-1576107232684-1279f390859f?w=500" alt="Fries">
+                <h3>Crispy French Fries</h3>
+                <p class="price">Average Price: ₹99</p>
+                <button class="order-btn">Order Now</button>
+            </div>
+        </div>
+        <div class="rating-box">
+            Overall Restaurant Rating: 4.4 ⭐⭐⭐⭐
+        </div>
+    </div>
+</body>
+
+</html>

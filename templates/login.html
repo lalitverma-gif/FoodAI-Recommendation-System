@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+</head>
+
+<body class="login-body">
+
+    <div class="login-container">
+
+        <h2>Welcome Back</h2>
+        <p>Login to your account</p>
+
+        <!-- Form configured to send a POST request with the credentials -->
+        <form action="/login" method="POST">
+
+            <input type="email" name="email" id="email" placeholder="Email Address" required>
+
+            <input type="password" name="password" id="password" placeholder="Password" required>
+
+            <button type="submit">Login</button>
+
+            <p class="signup-text">
+                Don't have an account?
+                <a href="/register_page">Sign up</a>
+            </p>
+
+        </form>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

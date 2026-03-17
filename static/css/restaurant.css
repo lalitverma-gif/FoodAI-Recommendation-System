@@ -1,0 +1,99 @@
+/* Restaurant Page Background */
+.restaurant-body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f9;
+}
+
+/* ============================ */
+/* EXACT COPY OF THE HOME NAVBAR */
+/* ============================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ff6a00;
+    padding: 15px 40px;
+    color: white;
+    margin: 0;
+}
+
+.navbar h2 {
+    margin: 0;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 20px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: #ffd7b5;
+}
+
+
+/* ============================ */
+/* RESTAURANT SECTION STYLES   */
+/* ============================ */
+.restaurant-section {
+    text-align: center;
+    padding: 40px;
+}
+
+.restaurant-section h1 {
+    color: #333;
+}
+
+/* Container */
+.restaurant-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Restaurant Card */
+.restaurant-card {
+    background: white;
+    padding: 25px;
+    width: 230px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+.restaurant-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Button */
+.restaurant-card button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    border: none;
+    background: #ff6a00;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.restaurant-card button:hover {
+    background: #e55d00;
+}
